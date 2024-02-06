@@ -1,12 +1,192 @@
+:root {
+  --navBgcolor: #33383f;
+  --mainBgcolor: #eaecef;
+  --cta-btn: #0d6efd;
+}
 
-/* 
+/* Utilities */
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 60px;
+  align-items: center;
+}
+nav {
+  background-color: var(--navBgcolor);
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-*/
+.nav-title {
+  color: white;
+  padding-left: 40px;
+}
+
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: solid 1px white;
+  padding: 8px;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 30px;
+  height: 3px;
+  background-color: #969696;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 40px;
+  gap: 20px;
+}
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 30px;
+  height: 3px;
+  background-color: lightgray;
+}
+
+.menuDropdown {
+  display: none;
+  flex-direction: column;
+  background-color: #33383f;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 10px;
+}
+a {
+  text-decoration: none;
+  color: lightgray;
+}
+
+.jumbotron {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background-color: var(--mainBgcolor);
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  padding: 20px 40px;
+  border-radius: 8px;
+}
+
+.cta-blue {
+  background-color: var(--cta-btn);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 40px;
+  margin-right: 40px;
+  gap: 20px;
+  min-width: 1200px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 300px;
+}
+.card-text {
+  text-align: center;
+  padding: 10px 20px;
+}
+.card-cta {
+  padding-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    display: none;
+  }
+  .menuDropdown,
+  .menuDropdown a {
+    display: flex;
+    flex-direction: column;
+    background-color: #33383f;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: solid 1px white;
+    cursor: pointer;
+    padding: 4px;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin-right: 20px;
+
+    &:hover {
+      background-color: #8893a1;
+    }
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+  }
+
+  .container-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .card {
+    flex-direction: column;
+  }
+}
